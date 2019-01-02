@@ -46,21 +46,26 @@
 
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugin-tools</groupId>
-                <artifactId>maven-plugin-tools</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+
+
 </project>
