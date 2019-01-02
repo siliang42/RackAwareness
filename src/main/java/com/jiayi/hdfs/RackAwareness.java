@@ -11,6 +11,15 @@ import java.util.List;
  */
 public class RackAwareness implements DNSToSwitchMapping {
 
+    /**
+     * --Topology Configuration--
+     * 	<property>
+     * 	  <name>net.topology.node.switch.mapping.impl</name>
+     * 	  <value>com.jiayi.hdfs.RackAwareness</value>
+     * 	</property>
+     * @param names
+     * @return
+     */
     @Override
     public List<String> resolve(List<String> names) {
         //ips jiayi1 192.168.206.101
