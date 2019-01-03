@@ -29,7 +29,8 @@ public class RackAwareness implements DNSToSwitchMapping {
             for(String name : names){
                 int hostNum = 0;
                 if(name.startsWith("jiayi")){
-                    hostNum = Integer.parseInt(name.substring("jiayi".length())) + 100;
+                    hostNum = Integer.parseInt(name.substring("jiayi".length())) + 100;//home
+//                    hostNum = Integer.parseInt(name.substring("jiayi".length())) + 120;// inc.
                 }else if(name.startsWith("192")){
                     hostNum = Integer.parseInt(name.substring(name.lastIndexOf(".") + 1));
                 }else {
@@ -38,7 +39,8 @@ public class RackAwareness implements DNSToSwitchMapping {
 
                 //自定义 机架感知 rack1 jiayi1 jiayi2
                 //              rack2 jiayi3 jiayi4
-                if(hostNum < 103){
+                if(hostNum < 103){ //home
+//                if(hostNum < 123){ //inc.
                     racks.add("/rack1/" + hostNum);
                 }else {
                     racks.add("/rack2/" +hostNum);
@@ -58,4 +60,5 @@ public class RackAwareness implements DNSToSwitchMapping {
     public void reloadCachedMappings(List<String> names) {
 
     }
+
 }
